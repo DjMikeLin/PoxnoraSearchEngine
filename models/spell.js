@@ -17,6 +17,6 @@ let Spell = mongoose.Schema({
     deckLimit: Number
 });
 
-let spellCollection = mongoose.model("spell", Spell);
-// export the donut model with module.exports
+let spellCollection = mongoose.model("spells", Spell);
+
 module.exports = spellCollection;

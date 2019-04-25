@@ -15,9 +15,13 @@ app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'hbs');
+/* hbs.registerHelper("inc", function(value, options)
+{
+    return parseInt(value) + 1;
+});
+app.engine('handlebars', hbs); */
 
 app.use('/', routes);
-/* app.use('/api/v1', apiRoutes) */
 
 const PORT = process.env.PORT || 3000; 
 

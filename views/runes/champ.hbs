@@ -52,18 +52,13 @@
                     {{#each abilitySets}}
                         {{#each this}}
                             {{#each this}}
-                                Upgrade {{@index}}:
+                                {{!-- Upgrade {{@index}}: --}}
                                 {{#each this}}
-                                    {{this.name}} {{this.level}}
-                                {{/each}}
+                                    {{this.name}} {{this.level}} Nora Cost: {{this.noraCost}}
+                                {{/each}}  |
                             {{/each}}
                         {{/each}}
                     {{/each}}
-{{!--                     {{#each abilitySets}}
-                        {{#each this.abilities}}
-                            {{this.name}}
-                        {{/each}}
-                    {{/each}} --}}
                 </p>
             </div>
         </div>

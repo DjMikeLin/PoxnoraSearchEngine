@@ -41,6 +41,30 @@
                 </p>
                 <p>Expansion Released: {{runeSet}}</p>
                 <p>Deck Limit: {{deckLimit}}</p>
+                <p>
+                    Starting Abilities:
+                    {{#each startingAbilities}}
+                        {{this.name}} |
+                    {{/each}}
+                </p>
+                <p>
+                    Upgrades:
+                    {{#each abilitySets}}
+                        {{#each this}}
+                            {{#each this}}
+                                Upgrade {{@index}}:
+                                {{#each this}}
+                                    {{this.name}} {{this.level}}
+                                {{/each}}
+                            {{/each}}
+                        {{/each}}
+                    {{/each}}
+{{!--                     {{#each abilitySets}}
+                        {{#each this.abilities}}
+                            {{this.name}}
+                        {{/each}}
+                    {{/each}} --}}
+                </p>
             </div>
         </div>
     {{/each}}

@@ -2,12 +2,12 @@ const Spell = require('../models/spell.js');
 
 const spellController = {
     show: (req, res) => {
-        Spell.find().then(spells => {
-            console.log(spells);
+        res.render("runes/index");
+/*         Spell.find().then(spells => {
             res.render("runes/index", { spells });
-        }).catch((error) => {
-            console.log(error)
-        })
+        }).catch(error => {
+            console.log(error);
+        }) */
     }
 };
 

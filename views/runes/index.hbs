@@ -1,9 +1,16 @@
 <main>
-	<h2>Spells</h2>
+{{!-- 	<h2>Spells</h2>
 
 	{{#each spells}}
 			<img src="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
-            {{!-- <p>{{name}}</p> --}}
-		</div>
-	{{/each}}
+            <p>{{name}}</p>
+	{{/each}} --}}
+    <form action="/">
+        <select name="options">
+            <option value="champions">Champions</option>
+            <option value="spells">Spells</option>
+            <option value="relics">Relics</option>
+            <option value="equipments">Equipments</option>
+        </select>
+    </form>
 </main>

@@ -1,4 +1,4 @@
-const Spell = require('../models/spell.js');
+const Spell = require('../models/spell');
 
 const spellController = {
     show: (req, res) => {

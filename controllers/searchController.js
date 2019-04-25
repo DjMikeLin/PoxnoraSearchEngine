@@ -1,5 +1,3 @@
-const spells = require('../controllers/spellController');
-
 const searchController = {
     show: (req, res) => {
         res.render("runes/index");

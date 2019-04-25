@@ -7,7 +7,7 @@ const searchController = {
     option: (req, res) => {
         switch(req.body.option){
             case "champions":
-                //render champs
+                
                 break;
             case "spells":
                 res.redirect('/spells');

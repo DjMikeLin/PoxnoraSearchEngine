@@ -1,0 +1,14 @@
+.runeInfo{
+    display: flex;
+    margin: 5% 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5%;
+}
+
+.runeImage{
+    width: 20%;
+}

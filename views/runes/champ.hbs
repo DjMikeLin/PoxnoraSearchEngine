@@ -1,0 +1,25 @@
+<form action="">
+    <select name="">
+        <option selected>Select One</option>
+        {{#each champs}}
+            <option value="{{name}}">{{name}}</option>
+        {{/each}}
+    </select>
+
+    {{#each champs}}
+        <div class="runeInfo">
+            <img class="runeImage" src="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
+            <div class="container">
+                <p>Name: {{name}}</p>
+                <p>Description: {{description}}</p>
+                <p>Flavor Text: {{flavorText}}</p>
+                <p>Nora Cost: {{noraCost}}</p>
+                <p>Artist: {{artist}}</p>
+                <p>Rarity: {{rarity}}</p>
+                <p>Cooldown: {{cooldown}}</p>
+                <p>Expansion Released: {{runeSet}}</p>
+                <p>Deck Limit: {{deckLimit}}</p>
+            </div>
+        </div>
+    {{/each}}
+</form>

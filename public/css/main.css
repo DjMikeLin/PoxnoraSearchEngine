@@ -11,4 +11,9 @@
 
 .runeImage{
     width: 20%;
+    height: 75%;
+}
+
+.container > p{
+    margin: 0;
 }

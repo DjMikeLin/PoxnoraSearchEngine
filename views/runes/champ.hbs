@@ -12,11 +12,33 @@
             <div class="container">
                 <p>Name: {{name}}</p>
                 <p>Description: {{description}}</p>
-                <p>Flavor Text: {{flavorText}}</p>
+                <p>Range: {{minRng}} - {{maxRng}}</p>
+                <p>Defense: {{defense}}</p>
+                <p>Speed: {{speed}}</p>
+                <p>Damage: {{damage}}</p>
+                <p>Hit Points: {{hitPoints}}</p>
+                <p>Size: {{size}}</p>
+                <p>Rarity: {{rarity}}</p>
+                <p>
+                    Classes: 
+                    {{#each classes}}
+                        {{this}} 
+                    {{/each}}
+                </p>
+                <p>
+                    Races:
+                    {{#each races}}
+                        {{this}}
+                    {{/each}}
+                </p>
                 <p>Nora Cost: {{noraCost}}</p>
                 <p>Artist: {{artist}}</p>
-                <p>Rarity: {{rarity}}</p>
-                <p>Cooldown: {{cooldown}}</p>
+                <p>
+                    Factions:
+                    {{#each factions}}
+                        {{this}}
+                    {{/each}}
+                </p>
                 <p>Expansion Released: {{runeSet}}</p>
                 <p>Deck Limit: {{deckLimit}}</p>
             </div>

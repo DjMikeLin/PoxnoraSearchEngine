@@ -12,6 +12,7 @@ router.post('/', searchController.option);
 router.get('/spells', spellController.show);
 
 router.get('/champs', champController.show);
+router.get('/champs/:id', champController.getRune);
 
 router.get('/relics', relicController.show);
 

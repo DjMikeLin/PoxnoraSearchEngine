@@ -1,14 +1,12 @@
 <main>
-    <form action="/" method="POST">
-        <select name="option" class="selector">
+    <form action="/" method="POST" onchange="submitForm(this)">
+        <select name="option">
             <option value="" selected>Select One</option>
             <option value="champions">Champions</option>
             <option value="spells">Spells</option>
             <option value="relics">Relics</option>
             <option value="equipments">Equipments</option>
         </select>
-
-        <input type="submit" value="Search">
     </form>
 
     <p id="errorMessage"></p>

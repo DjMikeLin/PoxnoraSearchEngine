@@ -1,4 +1,3 @@
-document.querySelector('.selector').onchange = () => {
-    console.log("hello");
-    this.form.submit();
-}; 
+function submitForm(form){
+    form.submit();
+}

@@ -3,26 +3,48 @@
     <div class="container">
         <p>Name: {{name}}</p>
         <p>Description: {{description}}</p>
-        <p>Range: {{minRng}} - {{maxRng}}</p>
-        <p>Defense: {{defense}}</p>
-        <p>Speed: {{speed}}</p>
-        <p>Damage: {{damage}}</p>
-        <p>Hit Points: {{hitPoints}}</p>
-        <p>Size: {{size}}</p>
+        {{#if flavorText}}
+            <p>Flavor Text: {{flavorText}}</p>
+        {{/if}}
+        {{#if minRng}}
+            <p>Range: {{minRng}} - {{maxRng}}</p>
+        {{/if}}
+        {{#if defense}}
+            <p>Defense: {{defense}}</p>
+        {{/if}}
+        {{#if speed}}
+            <p>Speed: {{speed}}</p>
+        {{/if}}
+        {{#if damage}}
+            <p>Damage: {{damage}}</p>
+        {{/if}}
+        {{#if hitPoints}}
+            <p>Hit Points: {{hitPoints}}</p>
+        {{/if}}
+        {{#if size}}
+            <p>Size: {{size}}</p>
+        {{/if}}
         <p>Rarity: {{rarity}}</p>
-        <p>
-            Classes: 
-            {{#each classes}}
-                {{this}} 
-            {{/each}}
-        </p>
-        <p>
-            Races:
-            {{#each races}}
-                {{this}}
-            {{/each}}
-        </p>
+        {{#if classes}}
+            <p>
+                Classes: 
+                {{#each classes}}
+                    {{this}} 
+                {{/each}}
+            </p>
+        {{/if}}
+        {{#if races}}
+            <p>
+                Races:
+                {{#each races}}
+                    {{this}}
+                {{/each}}
+            </p>
+        {{/if}}
         <p>Nora Cost: {{noraCost}}</p>
+        {{#if cooldown}}
+            <p>Cooldown: {{cooldown}}</p>
+        {{/if}}
         <p>Artist: {{artist}}</p>
         <p>
             Factions:
@@ -32,24 +54,28 @@
         </p>
         <p>Expansion Released: {{runeSet}}</p>
         <p>Deck Limit: {{deckLimit}}</p>
-        <p>
-            Starting Abilities:
-            {{#each startingAbilities}}
-                {{this.name}} |
-            {{/each}}
-        </p>
-        <p>
-            Upgrades:
-            {{#each abilitySets}}
-                {{#each this}}
+        {{#if startingAbilities}}
+            <p>
+                Starting Abilities:
+                {{#each startingAbilities}}
+                    {{this.name}} |
+                {{/each}}
+            </p>
+        {{/if}}
+        {{#if abilitySets}}
+            <p>
+                Upgrades:
+                {{#each abilitySets}}
                     {{#each this}}
-                        {{!-- Upgrade {{@index}}: --}}
                         {{#each this}}
-                            {{this.name}} {{this.level}} Nora Cost: {{this.noraCost}}
-                        {{/each}}  |
+                            {{!-- Upgrade {{@index}}: --}}
+                            {{#each this}}
+                                {{this.name}} {{this.level}} Nora Cost: {{this.noraCost}}
+                            {{/each}}  |
+                        {{/each}}
                     {{/each}}
                 {{/each}}
-            {{/each}}
-        </p>
+            </p>
+        {{/if}}
     </div>
 </div>

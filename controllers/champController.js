@@ -9,7 +9,7 @@ const champController = {
         })
     },
     getRune: (req, res) => {
-        Champion.find({id: parseInt(req.params.id)}).then(champ => {
+        Champion.find({_id: req.params.id}).then(champ => {
             let obj = champ[0];
             res.render("runes/rune", obj);
         })

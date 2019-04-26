@@ -1,11 +1,15 @@
-<form action="" onchange="submitForm(this)">
-    <select name="">
-        <option selected>Select One</option>
-        {{#each champs}}
-            <option value="{{name}}">{{name}}</option>
-        {{/each}}
-    </select>
-</form>
+<select name="">
+    <option selected>Select One</option>
+    {{#each champs}}
+        <option value="{{id}}">{{name}}</option>
+    {{/each}}
+</select>
+
+<a id="pageLink" href="/champions/">
+    <button>
+        Find
+    </button>
+</a>
 
 {{#each champs}}
     <div class="runeInfo">

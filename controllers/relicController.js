@@ -7,6 +7,11 @@ const relicController = {
         }).catch(error => {
             console.log(error);
         })
+    },
+    getRune: (req, res) => {
+        Relic.find({_id: req.params.id}).then(relic => {
+            res.render("runes/rune", relic[0]);
+        })
     }
 }
 

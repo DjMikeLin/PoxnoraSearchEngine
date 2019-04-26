@@ -7,6 +7,12 @@ const equipController = {
         }).catch(error => {
             console.log(error);
         })
+    },
+    getRune: (req, res) => {
+        Equip.find({_id: req.params.id}).then(equip => {
+            let obj = equip[0];
+            res.render("runes/rune", obj);
+        })
     }
 }
 

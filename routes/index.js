@@ -9,12 +9,15 @@ let router = express.Router();
 router.get('/', searchController.show);
 
 router.get('/spells', spellController.show);
+router.get('/spells/:id', spellController.getRune);
 
 router.get('/champions', champController.show);
 router.get('/champions/:id', champController.getRune);
 
 router.get('/relics', relicController.show);
+router.get('/relics/:id', relicController.getRune);
 
 router.get('/equipments', equipController.show);
+router.get('/equipments/:id', equipController.getRune);
 
 module.exports = router;

@@ -1,3 +1,3 @@
-function submitForm(form){
-    form.submit();
-}
+$('select').on('change', function(){
+    $('#pageLink').attr("href", "/" + this.value);
+});

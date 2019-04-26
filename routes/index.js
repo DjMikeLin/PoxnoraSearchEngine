@@ -7,15 +7,14 @@ let searchController = require('../controllers/searchController');
 let router = express.Router();
 
 router.get('/', searchController.show);
-router.post('/', searchController.option);
 
 router.get('/spells', spellController.show);
 
-router.get('/champs', champController.show);
-router.get('/champs/:id', champController.getRune);
+router.get('/champions', champController.show);
+router.get('/champions/:id', champController.getRune);
 
 router.get('/relics', relicController.show);
 
-router.get('/equips', equipController.show);
+router.get('/equipments', equipController.show);
 
 module.exports = router;

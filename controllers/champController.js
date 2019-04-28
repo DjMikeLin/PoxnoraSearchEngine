@@ -13,6 +13,17 @@ const champController = {
             let obj = champ[0];
             res.render("runes/rune", obj);
         })
+    },
+    getRuneToEdit: (req, res) => {
+        Champion.find({_id: req.params.id}).then(champ => {
+            let obj = champ[0];
+            res.render("runes/edit", obj);
+        })
+    },
+    edit: (req, res) => {
+        Champion.updateOne({_id: req.params.id}, req.body).then(() => {
+            res.redirect('/champions/' + req.params.id);
+        });
     }
 };
 

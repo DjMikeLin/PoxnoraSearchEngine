@@ -13,6 +13,17 @@ const equipController = {
             let obj = equip[0];
             res.render("runes/rune", obj);
         })
+    },
+    getRuneToEdit: (req, res) => {
+        Equip.find({_id: req.params.id}).then(equip => {
+            let obj = equip[0];
+            res.render("runes/edit", obj);
+        })
+    },
+    edit: (req, res) => {
+        Equip.updateOne({_id: req.params.id}, req.body).then(() => {
+            res.redirect('/equipments/' + req.params.id);
+        });
     }
 }
 

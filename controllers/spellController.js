@@ -21,7 +21,7 @@ const spellController = {
         })
     },
     edit: (req, res) => {
-        Spell.replaceOne({_id: req.params.id}, req.body).then(() => {
+        Spell.updateOne({_id: req.params.id}, req.body).then(() => {
             res.redirect('/spells/' + req.params.id);
         });
     }

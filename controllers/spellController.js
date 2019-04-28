@@ -24,6 +24,11 @@ const spellController = {
         Spell.updateOne({_id: req.params.id}, req.body).then(() => {
             res.redirect('/spells/' + req.params.id);
         });
+    },
+    delete: (req, res) => {
+        Spell.deleteOne({_id: req.params.id}).then(() => {
+            res.redirect('/spells');
+        });
     }
 };
 

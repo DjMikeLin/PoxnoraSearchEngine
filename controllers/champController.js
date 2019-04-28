@@ -24,6 +24,11 @@ const champController = {
         Champion.updateOne({_id: req.params.id}, req.body).then(() => {
             res.redirect('/champions/' + req.params.id);
         });
+    },
+    delete: (req, res) => {
+        Champion.deleteOne({_id: req.params.id}).then(() => {
+            res.redirect('/champions');
+        });
     }
 };
 

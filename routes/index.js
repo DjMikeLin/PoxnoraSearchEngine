@@ -11,21 +11,25 @@ router.get('/', searchController.show);
 router.get('/spells', spellController.show);
 router.get('/spells/:id', spellController.getRune);
 router.put('/spells/:id', spellController.edit);
+router.delete('/spells/:id', spellController.delete);
 router.get('/spells/:id/edit', spellController.getRuneToEdit);
 
 router.get('/champions', champController.show);
 router.get('/champions/:id', champController.getRune);
 router.put('/champions/:id', champController.edit);
+router.delete('/champions/:id', champController.delete);
 router.get('/champions/:id/edit', champController.getRuneToEdit);
 
 router.get('/relics', relicController.show);
 router.get('/relics/:id', relicController.getRune);
 router.put('/relics/:id', relicController.edit);
+router.delete('/relics/:id', relicController.delete);
 router.get('/relics/:id/edit', relicController.getRuneToEdit);
 
 router.get('/equipments', equipController.show);
 router.get('/equipments/:id', equipController.getRune);
 router.put('/equipments/:id', equipController.edit);
+router.delete('/equipments/:id', equipController.delete);
 router.get('/equipments/:id/edit', equipController.getRuneToEdit);
 
 module.exports = router;

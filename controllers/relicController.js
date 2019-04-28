@@ -23,6 +23,11 @@ const relicController = {
         Relic.updateOne({_id: req.params.id}, req.body).then(() => {
             res.redirect('/relics/' + req.params.id);
         });
+    },
+    delete: (req, res) => {
+        Relic.deleteOne({_id: req.params.id}).then(() => {
+            res.redirect('/relics');
+        });
     }
 }
 

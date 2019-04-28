@@ -24,6 +24,11 @@ const equipController = {
         Equip.updateOne({_id: req.params.id}, req.body).then(() => {
             res.redirect('/equipments/' + req.params.id);
         });
+    },
+    delete: (req, res) => {
+        Equip.deleteOne({_id: req.params.id}).then(() => {
+            res.redirect('/equipments');
+        });
     }
 }
 

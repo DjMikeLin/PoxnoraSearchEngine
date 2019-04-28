@@ -1,71 +1,71 @@
 <form method="POST">
     <section>
         Name: 
-        <input type="text" value="{{name}}">
+        <input name="name" type="text" value="{{name}}">
     </section>
     
     <section>
         Description: 
-        <input type="text" value="{{description}}">
+        <input name="description" type="text" value="{{description}}">
     </section>
 
     {{#if flavorText}}
         <section>
             Flavor Text:
-            <input type="text" value="{{flavorText}}">
+            <input name="flavorText" type="text" value="{{flavorText}}">
         </section>
     {{/if}}
     {{!-- Assuming if minRng exists, maxRng also exists --}}
     {{#if minRng}}
         <section>
             Minimum Range: 
-            <input type="number" value="{{minRng}}">
+            <input name="minRng" type="number" value="{{minRng}}">
         </section>
 
         <section>
             Maximum Range:
-            <input type="number" value="{{maxRng}}">
+            <input name="maxRng" type="number" value="{{maxRng}}">
         </section>
     {{/if}}
 
     {{#if defense}}
         <section>
             Defense:
-            <input type="number" value="{{defense}}">
+            <input name="defense" type="number" value="{{defense}}">
         </section>
     {{/if}}
 
     {{#if speed}}
         <section>
             Speed:
-            <input type="number" value="{{speed}}">
+            <input name="speed" type="number" value="{{speed}}">
         </section>
     {{/if}}
 
     {{#if damage}}
         <section>
             Damage: 
-            <input type="number" value="{{damage}}">
+            <input name="damage" type="number" value="{{damage}}">
         </section>
     {{/if}}
     
     {{#if hitPoints}}
         <section>
             Hit Points: 
-            <input type="number" value="{{hitPoints}}">
+            <input name="hitPoints" type="number" value="{{hitPoints}}">
         </section>
     {{/if}}
 
     {{#if size}}
         <section>
             Size:
-            <input type="text" value="{{size}}">
+            <input name="size" type="text" value="{{size}}">
         </section>
     {{/if}}
 
     <Section>
         Rarity: 
-        <input type="text" value="{{rarity}}">
+        <input name="rarity" type="text" value="{{rarity}}">
     </Section>
 
     {{#if classes}}
@@ -88,34 +88,34 @@
 
     <section>
         Nora Cost: 
-        <input type="number" value="{{noraCost}}">
+        <input name="noraCost" type="number" value="{{noraCost}}">
     </section>
 
     {{#if cooldown}}
         <section>
             Cooldown:
-            <input type="number" value="{{cooldown}}">
+            <input name="cooldown" type="number" value="{{cooldown}}">
         </section>
     {{/if}}
 
     <Section>
         For Sale: 
-        <input type="text" value="{{forSale}}">
+        <input name="forSale" type="text" value="{{forSale}}">
     </Section>
 
     <Section>
         Allow Ranked:
-        <input type="text" value="{{allowRanked}}">
+        <input name="allowRanked" type="text" value="{{allowRanked}}">
     </Section>
 
     <Section>
         Tradeable: 
-        <input type="text" value="{{tradeable}}">
+        <input name="tradeable" type="text" value="{{tradeable}}">
     </Section>
 
     <section>
         Artist:
-        <input type="text" value="{{artist}}">
+        <input name="artist" type="text" value="{{artist}}">
     </section>
 
     <section>
@@ -127,17 +127,17 @@
 
     <section>
         Expansion Released:
-        <input type="text" value="{{runeSet}}">
+        <input name="runeSet" type="text" value="{{runeSet}}">
     </section>
 
     <section>
         Deck Limit: 
-        <input type="number" value="{{deckLimit}}">
+        <input name="deckLimit" type="number" value="{{deckLimit}}">
     </section>
     {{!-- For images like https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/ej9AJ8Jg3AE8Df1Bf1Aj9Dj9Eerqsxzxfgnjwvqf.jpg --}}
     <section>
         Hash:
-        <input type="text" value="{{hash}}">
+        <input name="hash" type="text" value="{{hash}}">
     </section>
 
     {{#if startingAbilities}}

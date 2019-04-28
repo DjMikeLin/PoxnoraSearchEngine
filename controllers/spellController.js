@@ -21,10 +21,9 @@ const spellController = {
         })
     },
     edit: (req, res) => {
-        console.log(req.body);
-        //Spell.replaceOne({_id: req.params.id}, ).then
-        res.send("test");
-        //res.render("runes/rune");
+        Spell.replaceOne({_id: req.params.id}, req.body).then(() => {
+            res.redirect('/spells/' + req.params.id);
+        });
     }
 };
 

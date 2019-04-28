@@ -6,8 +6,8 @@ const methodOverride = require('method-override');
 const logger = require('morgan');
 
 //Middleware
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
 app.use(logger('dev'));

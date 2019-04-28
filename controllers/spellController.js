@@ -9,11 +9,22 @@ const spellController = {
         })
     },
     getRune: (req, res) => {
-        console.log(req.params.id);
         Spell.find({_id: req.params.id}).then(spell => {
             let obj = spell[0];
             res.render("runes/rune", obj);
         })
+    },
+    getRuneToEdit: (req, res) => {
+        Spell.find({_id: req.params.id}).then(spell => {
+            let obj = spell[0];
+            res.render("runes/edit", obj);
+        })
+    },
+    edit: (req, res) => {
+        console.log(req.body);
+        //Spell.replaceOne({_id: req.params.id}, ).then
+        res.send("test");
+        //res.render("runes/rune");
     }
 };
 

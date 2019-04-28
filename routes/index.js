@@ -10,6 +10,8 @@ router.get('/', searchController.show);
 
 router.get('/spells', spellController.show);
 router.get('/spells/:id', spellController.getRune);
+router.put('/spells/:id', spellController.edit);
+router.get('/spells/:id/edit', spellController.getRuneToEdit);
 
 router.get('/champions', champController.show);
 router.get('/champions/:id', champController.getRune);

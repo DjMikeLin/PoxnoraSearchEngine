@@ -31,6 +31,7 @@ const spellController = {
         });
     },
     createPage: (req, res) => {
+        //Creates a spell obj called "Acid Storm"
         let spell = {
             name: "Acid Storm",
             description: "Area Effect 3: Units take 10 Acid damage and become <condition value=scoured>Scoured</condition> for 2 turns.",

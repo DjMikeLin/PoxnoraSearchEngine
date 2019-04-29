@@ -31,6 +31,7 @@ const champController = {
         });
     },
     createPage: (req, res) => {
+        //Creates a champ obj called "Abomination"
         let champ = {
             name: "Abomination",
             description: "A mind is a terrible thing to waste. So is a spleen, a kidney, a liver, an eye... - Xulos, Undead Sage",
@@ -80,7 +81,7 @@ const champController = {
         res.render("runes/create", champ);
     },
     create: (req, res) => {
-        Champion.find({name: req.body.name}).then((element) => {
+        Champion.find({name: req.body.name}).then(element => {
             if(element.length === 0){//if the rune doesn't exist
                 Champion.create(req.body).then(() => {
                     res.redirect("/champions");

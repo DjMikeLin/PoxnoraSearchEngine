@@ -30,6 +30,7 @@ const relicController = {
         });
     },
     createPage: (req, res) => {
+        //Creates a relic obj called "Altar of Bones"
         let relic = {
             name: "Altar of Bones",
             description: "This relic has Bone Altar (<mechanic value=sacrifice>Sacrifice</mechanic> target champion you own within 4 spaces with Race: Skeleton, friendly Skeletons gain +4 HP and +1 DMG.).",

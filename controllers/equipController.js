@@ -31,6 +31,7 @@ const equipController = {
         });
     },
     createPage: (req, res) => {
+        //Creates a equip obj called "Akakios's Blade"
         let equip = {
             name: "Akakios's Blade",
             description: "Equipped champion gains <ability value=165>Rend 3</ability>. If it has Race: Draksar, it also gains <ability value=591>Flamestrike</ability>.",

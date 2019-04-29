@@ -1,4 +1,5 @@
 const Equip = require('../models/equip');
+const helper = require('../api/helper');
 
 const equipController = {
     show: (req, res) => {
@@ -22,11 +23,7 @@ const equipController = {
     },
     edit: (req, res) => {
         Equip.updateOne({_id: req.params.id}, req.body).then(() => {
-            let factions = [req.body.faction1];
-            if(req.body.faction2.length !== 0){//If faction2 exists
-                factions.push(req.body.faction2);
-            }
-            Equip.updateOne({_id: req.params.id}, { factions: factions}).then(() => {
+            Equip.updateOne({_id: req.params.id}, helper.findFactions(req.body.faction1, req.body.faction2)).then(() => {
                 res.redirect('/equipments/' + req.params.id);
             });
         });
@@ -58,8 +55,10 @@ const equipController = {
     create: (req, res) => {
         Equip.find({name: req.body.name}).then(element => {
             if(element.length === 0){//if the rune doesn't exist
-                Equip.create(req.body).then(() => {
-                    res.redirect("/equipments");
+                Equip.create(req.body).then((element) => {
+                    Equip.updateOne({name: element.name}, helper.findFactions(req.body.faction1, req.body.faction2)).then(() => {
+                        res.redirect("/equipments");
+                    });
                 });
             }
             else

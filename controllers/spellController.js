@@ -1,4 +1,5 @@
 const Spell = require('../models/spell');
+const helper = require('../api/helper');
 
 const spellController = {
     show: (req, res) => {
@@ -22,11 +23,7 @@ const spellController = {
     },
     edit: (req, res) => {
         Spell.updateOne({_id: req.params.id}, req.body).then(() => {
-            let factions = [req.body.faction1];
-            if(req.body.faction2.length !== 0){//If faction2 exists
-                factions.push(req.body.faction2);
-            }
-            Spell.updateOne({_id: req.params.id}, { factions: factions}).then(() => {
+            Spell.updateOne({_id: req.params.id}, helper.findFactions(req.body.faction1, req.body.faction2)).then(() => {
                 res.redirect('/spells/' + req.params.id);
             });
         });
@@ -63,8 +60,10 @@ const spellController = {
     create: (req, res) => {
         Spell.find({name: req.body.name}).then(element => {
             if(element.length === 0){//if the rune doesn't exist
-                Spell.create(req.body).then(() => {
-                    res.redirect("/spells");
+                Spell.create(req.body).then((element) => {
+                    Spell.updateOne({name: element.name}, helper.findFactions(req.body.faction1, req.body.faction2)).then(() => {
+                        res.redirect("/spells");
+                    });
                 });
             }
             else

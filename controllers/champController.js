@@ -1,5 +1,5 @@
 const Champion = require('../models/champ');
-const search = require('../controllers/searchController');
+const helper = require('../api/helper');
 
 const champController = {
     show: (req, res) => {
@@ -23,11 +23,7 @@ const champController = {
     },
     edit: (req, res) => {
         Champion.updateOne({_id: req.params.id}, req.body).then(() => {
-            let factions = [req.body.faction1];
-            if(req.body.faction2.length !== 0){//If faction2 exists
-                factions.push(req.body.faction2);
-            }
-            Champion.updateOne({_id: req.params.id}, { factions: factions}).then(() => {
+            Champion.updateOne({_id: req.params.id}, helper.findFactions(req.body.faction1, req.body.faction2)).then(() => {
                 res.redirect('/champions/' + req.params.id);
             });
         });
@@ -90,8 +86,10 @@ const champController = {
     create: (req, res) => {
         Champion.find({name: req.body.name}).then(element => {
             if(element.length === 0){//if the rune doesn't exist
-                Champion.create(req.body).then(() => {
-                    res.redirect("/champions");
+                Champion.create(req.body).then((element) => {
+                    Champion.updateOne({name: element.name}, helper.findFactions(req.body.faction1, req.body.faction2)).then(() => {
+                        res.redirect("/champions");
+                    });
                 });
             }
             else

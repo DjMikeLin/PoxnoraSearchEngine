@@ -120,9 +120,10 @@
 
     <section>
         Factions:
-        {{#each factions}}
-            <input type="text" value="{{this}}">
-        {{/each}}
+        {{!-- Runes have at least one faction --}}
+        <input type="text" name="faction1" value="{{factions.[0]}}">
+        {{!-- Runes have at most 2 factions --}}
+        <input type="text" name="faction2" value="{{factions.[1]}}">
     </section>
 
     <section>

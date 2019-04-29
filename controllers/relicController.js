@@ -1,4 +1,5 @@
 const Relic = require('../models/relic');
+const helper = require('../api/helper');
 
 const relicController = {
     show: (req, res) => {
@@ -21,11 +22,7 @@ const relicController = {
     },
     edit: (req, res) => {
         Relic.updateOne({_id: req.params.id}, req.body).then(() => {
-            let factions = [req.body.faction1];
-            if(req.body.faction2.length !== 0){//If faction2 exists
-                factions.push(req.body.faction2);
-            }
-            Relic.updateOne({_id: req.params.id}, { factions: factions}).then(() => {
+            Relic.updateOne({_id: req.params.id}, helper.findFactions(req.body.faction1, req.body.faction2)).then(() => {
                 res.redirect('/relics/' + req.params.id);
             });
         });
@@ -60,8 +57,10 @@ const relicController = {
     create: (req, res) => {
         Relic.find({name: req.body.name}).then(element => {
             if(element.length === 0){//if the rune doesn't exist
-                Relic.create(req.body).then(() => {
-                    res.redirect("/relics");
+                Relic.create(req.body).then((element) => {
+                    Relic.updateOne({name: element.name}, helper.findFactions(req.body.faction1, req.body.faction2)).then(() => {
+                        res.redirect("/relics");
+                    });
                 });
             }
             else

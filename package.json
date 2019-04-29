@@ -2,7 +2,7 @@
   "name": "PoxnoraSearchEngine",
   "version": "1.0.0",
   "description": "Search engine to search/filter runes in Poxnora",
-  "main": "server.js",
+  "main": "handleBarsHelper.js",
   "dependencies": {
     "express": "^4.16.4",
     "hbs": "^4.0.4",

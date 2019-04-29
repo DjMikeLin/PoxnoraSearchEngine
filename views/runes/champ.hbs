@@ -1,76 +1,78 @@
-<select name="">
-    <option selected>Select One</option>
+<main>
+    <select class="form-control" name="">
+        <option selected>Select One</option>
+        {{#each champs}}
+            <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select>
+
+    <a id="pageLink" href="/champions/">
+        <button class="btn btn-lg btn-dark btn-outline-success">
+            Find
+        </button>
+    </a>
+
+    <a href="/champions/create">
+        <button class="btn btn-lg btn-dark btn-outline-success">
+            Create Champion
+        </button>
+    </a>
+
     {{#each champs}}
-        <option value="{{id}}">{{name}}</option>
-    {{/each}}
-</select>
-
-<a id="pageLink" href="/champions/">
-    <button>
-        Find
-    </button>
-</a>
-
-<a href="/champions/create">
-    <button>
-        Create Champion
-    </button>
-</a>
-
-{{#each champs}}
-    <div class="runeInfo">
-        <img class="runeImage" src="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
-        <div class="container">
-            <p>Name: {{name}}</p>
-            <p>Description: {{description}}</p>
-            <p>Range: {{minRng}} - {{maxRng}}</p>
-            <p>Defense: {{defense}}</p>
-            <p>Speed: {{speed}}</p>
-            <p>Damage: {{damage}}</p>
-            <p>Hit Points: {{hitPoints}}</p>
-            <p>Size: {{size}}</p>
-            <p>Rarity: {{rarity}}</p>
-            <p>
-                Classes: 
-                {{#each classes}}
-                    {{this}} 
-                {{/each}}
-            </p>
-            <p>
-                Races:
-                {{#each races}}
-                    {{this}}
-                {{/each}}
-            </p>
-            <p>Nora Cost: {{noraCost}}</p>
-            <p>Artist: {{artist}}</p>
-            <p>
-                Factions:
-                {{#each factions}}
-                    {{this}}
-                {{/each}}
-            </p>
-            <p>Expansion Released: {{runeSet}}</p>
-            <p>Deck Limit: {{deckLimit}}</p>
-            <p>
-                Starting Abilities:
-                {{#each startingAbilities}}
-                    {{this.name}} |
-                {{/each}}
-            </p>
-            <p>
-                Upgrades:
-                {{#each abilitySets}}
-                    {{#each this}}
+        <div class="runeInfo">
+            <img class="runeImage" src="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
+            <div class="container">
+                <p>Name: {{name}}</p>
+                <p>Description: {{description}}</p>
+                <p>Range: {{minRng}} - {{maxRng}}</p>
+                <p>Defense: {{defense}}</p>
+                <p>Speed: {{speed}}</p>
+                <p>Damage: {{damage}}</p>
+                <p>Hit Points: {{hitPoints}}</p>
+                <p>Size: {{size}}</p>
+                <p>Rarity: {{rarity}}</p>
+                <p>
+                    Classes: 
+                    {{#each classes}}
+                        {{this}} 
+                    {{/each}}
+                </p>
+                <p>
+                    Races:
+                    {{#each races}}
+                        {{this}}
+                    {{/each}}
+                </p>
+                <p>Nora Cost: {{noraCost}}</p>
+                <p>Artist: {{artist}}</p>
+                <p>
+                    Factions:
+                    {{#each factions}}
+                        {{this}}
+                    {{/each}}
+                </p>
+                <p>Expansion Released: {{runeSet}}</p>
+                <p>Deck Limit: {{deckLimit}}</p>
+                <p>
+                    Starting Abilities:
+                    {{#each startingAbilities}}
+                        {{this.name}} |
+                    {{/each}}
+                </p>
+                <p>
+                    Upgrades:
+                    {{#each abilitySets}}
                         {{#each this}}
-                            {{!-- Upgrade {{@index}}: --}}
                             {{#each this}}
-                                {{this.name}} {{this.level}} Nora Cost: {{this.noraCost}}
-                            {{/each}}  |
+                                {{!-- Upgrade {{@index}}: --}}
+                                {{#each this}}
+                                    {{this.name}} {{this.level}} Nora Cost: {{this.noraCost}}
+                                {{/each}}  |
+                            {{/each}}
                         {{/each}}
                     {{/each}}
-                {{/each}}
-            </p>
+                </p>
+            </div>
         </div>
-    </div>
-{{/each}}
+    {{/each}}
+</main>

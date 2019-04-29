@@ -1,39 +1,41 @@
-<select name="">
-    <option selected>Select One</option>
+<main>
+    <select class="form-control" name="">
+        <option selected>Select One</option>
+        {{#each equips}}
+            <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select>
+
+    <a id="pageLink" href="/equipments/">
+        <button class="btn btn-lg btn-dark btn-outline-success">
+            Find
+        </button>
+    </a>
+
+    <a href="/equipments/create">
+        <button class="btn btn-lg btn-dark btn-outline-success">
+            Create Equipment
+        </button>
+    </a>
+
     {{#each equips}}
-        <option value="{{id}}">{{name}}</option>
-    {{/each}}
-</select>
-
-<a id="pageLink" href="/equipments/">
-    <button>
-        Find
-    </button>
-</a>
-
-<a href="/equipments/create">
-    <button>
-        Create Equipment
-    </button>
-</a>
-
-{{#each equips}}
-    <div class="runeInfo">
-        <img class="runeImage" src="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
-        <div class="container">
-            <p>Name: {{name}}</p>
-            <p>Description: {{description}}</p>
-            <p>Flavor Text: {{flavorText}}</p>
-            <p>Nora Cost: {{noraCost}}</p>
-            <p>Artist: {{artist}}</p>
-            <p>Factions: 
-                {{#each factions}}
-                    {{this}} 
-                {{/each}}
-            </p>
-            <p>Rarity: {{rarity}}</p>
-            <p>Expansion Released: {{runeSet}}</p>
-            <p>Deck Limit: {{deckLimit}}</p>
+        <div class="runeInfo">
+            <img class="runeImage" src="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
+            <div class="container">
+                <p>Name: {{name}}</p>
+                <p>Description: {{description}}</p>
+                <p>Flavor Text: {{flavorText}}</p>
+                <p>Nora Cost: {{noraCost}}</p>
+                <p>Artist: {{artist}}</p>
+                <p>Factions: 
+                    {{#each factions}}
+                        {{this}} 
+                    {{/each}}
+                </p>
+                <p>Rarity: {{rarity}}</p>
+                <p>Expansion Released: {{runeSet}}</p>
+                <p>Deck Limit: {{deckLimit}}</p>
+            </div>
         </div>
-    </div>
-{{/each}}
+    {{/each}}
+</main>

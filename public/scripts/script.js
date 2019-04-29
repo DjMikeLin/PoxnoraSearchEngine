@@ -14,6 +14,12 @@ $(() => {
         $('form').submit();
     });
 
+    $('#createBtn').on('click', function(e){
+        e.preventDefault();
+        $('form').attr("action", window.location.href.substring(0, window.location.href.length - 7));
+        $('form').submit();
+    });
+
     $('#editRune').on('click', function(e){
         e.preventDefault();
         $('form').attr("action", window.location.href.substring(0, window.location.href.length - 5) + "?_method=PUT");

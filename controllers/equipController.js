@@ -29,6 +29,29 @@ const equipController = {
         Equip.deleteOne({_id: req.params.id}).then(() => {
             res.redirect('/equipments');
         });
+    },
+    createPage: (req, res) => {
+        let equip = {
+            name: String,
+            description: String,
+            flavorText: String,
+            noraCost: Number,
+            artist: String,
+            factions: [String],
+            rarity: String,
+            runeSet: String,
+            forSale: Boolean,
+            alloweRanked: Boolean,
+            tradeable: Boolean,
+            hash: String,
+            deckLimit: Number
+        };
+        res.render("runes/create", spell);
+    },
+    create: (req, res) => {
+        Spell.create(req.body).then(() => {
+            res.redirect("/spells");
+        });
     }
 }
 

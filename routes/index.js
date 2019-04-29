@@ -9,12 +9,16 @@ let router = express.Router();
 router.get('/', searchController.show);
 
 router.get('/spells', spellController.show);
+router.post('/spells', spellController.create);
+router.get('/spells/create', spellController.createPage);
 router.get('/spells/:id', spellController.getRune);
 router.put('/spells/:id', spellController.edit);
 router.delete('/spells/:id', spellController.delete);
 router.get('/spells/:id/edit', spellController.getRuneToEdit);
 
 router.get('/champions', champController.show);
+router.post('/champions', champController.create);
+router.get('/champions/create', champController.createPage);
 router.get('/champions/:id', champController.getRune);
 router.put('/champions/:id', champController.edit);
 router.delete('/champions/:id', champController.delete);

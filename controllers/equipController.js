@@ -22,7 +22,13 @@ const equipController = {
     },
     edit: (req, res) => {
         Equip.updateOne({_id: req.params.id}, req.body).then(() => {
-            res.redirect('/equipments/' + req.params.id);
+            let factions = [req.body.faction1];
+            if(req.body.faction2.length !== 0){//If faction2 exists
+                factions.push(req.body.faction2);
+            }
+            Equip.updateOne({_id: req.params.id}, { factions: factions}).then(() => {
+                res.redirect('/equipments/' + req.params.id);
+            });
         });
     },
     delete: (req, res) => {

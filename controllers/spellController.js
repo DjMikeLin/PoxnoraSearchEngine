@@ -22,6 +22,16 @@ const spellController = {
     },
     edit: (req, res) => {
         Spell.updateOne({_id: req.params.id}, req.body).then(() => {
+            let factions = [req.body.faction1];
+            if(req.body.faction2.length !== 0){//If faction2 exists
+                factions.push(req.body.faction2);
+            }
+            Spell.updateOne({_id: req.params.id}, { factions: factions}).then(() => {
+                res.redirect('/spells/' + req.params.id);
+            });
+        });
+
+        Spell.updateOne({_id: req.params.id}, req.body).then(() => {
             res.redirect('/spells/' + req.params.id);
         });
     },

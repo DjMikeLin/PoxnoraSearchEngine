@@ -26,6 +26,11 @@
             <p>Flavor Text: {{flavorText}}</p>
             <p>Nora Cost: {{noraCost}}</p>
             <p>Artist: {{artist}}</p>
+            <p>Factions: 
+                {{#each factions}}
+                    {{this}} 
+                {{/each}}
+            </p>
             <p>Rarity: {{rarity}}</p>
             <p>Cooldown: {{cooldown}}</p>
             <p>Expansion Released: {{runeSet}}</p>

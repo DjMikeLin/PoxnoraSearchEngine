@@ -121,7 +121,9 @@
     <section>
         Factions:
         {{!-- Runes have at least one faction --}}
-        <input type="text" value="{{factions.0}}">
+        <input type="text" name="faction1" value="{{factions.[0]}}">
+        {{!-- Runes have at most 2 factions --}}
+        <input type="text" name="faction2" value="{{factions.[1]}}">
     </section>
 
     <section>

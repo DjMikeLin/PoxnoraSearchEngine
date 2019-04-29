@@ -26,7 +26,7 @@ router.get('/champions/:id/edit', champController.getRuneToEdit);
 
 router.get('/relics', relicController.show);
 router.post('/relics', relicController.create);
-router.get('/relics/create', equipController.createPage);
+router.get('/relics/create', relicController.createPage);
 router.get('/relics/:id', relicController.getRune);
 router.put('/relics/:id', relicController.edit);
 router.delete('/relics/:id', relicController.delete);

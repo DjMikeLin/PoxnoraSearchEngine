@@ -32,25 +32,25 @@ const equipController = {
     },
     createPage: (req, res) => {
         let equip = {
-            name: String,
-            description: String,
-            flavorText: String,
-            noraCost: Number,
-            artist: String,
-            factions: [String],
-            rarity: String,
-            runeSet: String,
-            forSale: Boolean,
-            alloweRanked: Boolean,
-            tradeable: Boolean,
-            hash: String,
-            deckLimit: Number
+            name: "Akakios's Blade",
+            description: "Equipped champion gains <ability value=165>Rend 3</ability>. If it has Race: Draksar, it also gains <ability value=591>Flamestrike</ability>.",
+            flavorText: "The Blade of Lord Akakios is said to be the first blade forged under his rule. Some believe it was pilfered from the ruins of the kingdom he usurped.",
+            noraCost: 25,
+            artist: "Anthony Lopes",
+            factions: ["Sundered Lands"],
+            rarity: "RARE",
+            runeSet: "Ancient Awakenings",
+            forSale: "true",
+            alloweRanked: "true",
+            tradeable: "true",
+            hash: "ej9Cj9BG2AE8Df1BG2Aj9Bj9Ceerzohegipqzvqf",
+            deckLimit: 2
         };
-        res.render("runes/create", spell);
+        res.render("runes/create", equip);
     },
     create: (req, res) => {
-        Spell.create(req.body).then(() => {
-            res.redirect("/spells");
+        Equip.create(req.body).then(() => {
+            res.redirect("/equipments");
         });
     }
 }

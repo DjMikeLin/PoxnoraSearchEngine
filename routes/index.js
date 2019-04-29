@@ -25,12 +25,16 @@ router.delete('/champions/:id', champController.delete);
 router.get('/champions/:id/edit', champController.getRuneToEdit);
 
 router.get('/relics', relicController.show);
+router.post('/relics', relicController.create);
+router.get('/relics/create', equipController.createPage);
 router.get('/relics/:id', relicController.getRune);
 router.put('/relics/:id', relicController.edit);
 router.delete('/relics/:id', relicController.delete);
 router.get('/relics/:id/edit', relicController.getRuneToEdit);
 
 router.get('/equipments', equipController.show);
+router.post('/equipments', equipController.create);
+router.get('/equipments/create', equipController.createPage);
 router.get('/equipments/:id', equipController.getRune);
 router.put('/equipments/:id', equipController.edit);
 router.delete('/equipments/:id', equipController.delete);

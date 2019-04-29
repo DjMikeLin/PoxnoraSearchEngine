@@ -49,8 +49,14 @@ const equipController = {
         res.render("runes/create", equip);
     },
     create: (req, res) => {
-        Equip.create(req.body).then(() => {
-            res.redirect("/equipments");
+        Equip.find({name: req.body.name}).then(element => {
+            if(element.length === 0){//if the rune doesn't exist
+                Equip.create(req.body).then(() => {
+                    res.redirect("/equipments");
+                });
+            }
+            else
+                res.redirect('/equipments/error');
         });
     }
 }

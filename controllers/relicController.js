@@ -51,8 +51,14 @@ const relicController = {
         res.render("runes/create", relic);
     },
     create: (req, res) => {
-        Relic.create(req.body).then(() => {
-            res.redirect("/relics");
+        Relic.find({name: req.body.name}).then(element => {
+            if(element.length === 0){//if the rune doesn't exist
+                Relic.create(req.body).then(() => {
+                    res.redirect("/relics");
+                });
+            }
+            else
+                res.redirect('/relics/error');
         });
     }
 }

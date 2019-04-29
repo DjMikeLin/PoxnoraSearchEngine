@@ -50,8 +50,14 @@ const spellController = {
         res.render("runes/create", spell);
     },
     create: (req, res) => {
-        Spell.create(req.body).then(() => {
-            res.redirect("/spells");
+        Spell.find({name: req.body.name}).then(element => {
+            if(element.length === 0){//if the rune doesn't exist
+                Spell.create(req.body).then(() => {
+                    res.redirect("/spells");
+                });
+            }
+            else
+                res.redirect('/spells/error');
         });
     }
 };

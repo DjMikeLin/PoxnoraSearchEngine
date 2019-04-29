@@ -10,6 +10,7 @@ router.get('/', searchController.show);
 
 router.get('/spells', spellController.show);
 router.post('/spells', spellController.create);
+router.get('/spells/error', searchController.creationError);
 router.get('/spells/create', spellController.createPage);
 router.get('/spells/:id', spellController.getRune);
 router.put('/spells/:id', spellController.edit);
@@ -18,6 +19,7 @@ router.get('/spells/:id/edit', spellController.getRuneToEdit);
 
 router.get('/champions', champController.show);
 router.post('/champions', champController.create);
+router.get('/champions/error', searchController.creationError);
 router.get('/champions/create', champController.createPage);
 router.get('/champions/:id', champController.getRune);
 router.put('/champions/:id', champController.edit);
@@ -26,6 +28,7 @@ router.get('/champions/:id/edit', champController.getRuneToEdit);
 
 router.get('/relics', relicController.show);
 router.post('/relics', relicController.create);
+router.get('/relics/error', searchController.creationError);
 router.get('/relics/create', relicController.createPage);
 router.get('/relics/:id', relicController.getRune);
 router.put('/relics/:id', relicController.edit);
@@ -34,6 +37,7 @@ router.get('/relics/:id/edit', relicController.getRuneToEdit);
 
 router.get('/equipments', equipController.show);
 router.post('/equipments', equipController.create);
+router.get('/equipments/error', searchController.creationError);
 router.get('/equipments/create', equipController.createPage);
 router.get('/equipments/:id', equipController.getRune);
 router.put('/equipments/:id', equipController.edit);

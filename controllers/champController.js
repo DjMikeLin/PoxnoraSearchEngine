@@ -80,8 +80,14 @@ const champController = {
         res.render("runes/create", champ);
     },
     create: (req, res) => {
-        Champion.create(req.body).then(() => {
-            res.redirect("/champions");
+        Champion.find({name: req.body.name}).then((element) => {
+            if(element.length === 0){//if the rune doesn't exist
+                Champion.create(req.body).then(() => {
+                    res.redirect("/champions");
+                });
+            }
+            else
+                res.redirect('/champions/error');
         });
     }
 };

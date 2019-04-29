@@ -25,4 +25,9 @@ $(() => {
         $('form').attr("action", window.location.href.substring(0, window.location.href.length - 5) + "?_method=PUT");
         $('form').submit();
     });
+
+    $('#back').on('click', function(e){
+        e.preventDefault();
+        window.location.href = window.location.href.substring(0, window.location.href.length - 6);
+    });
 });

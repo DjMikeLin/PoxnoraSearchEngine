@@ -17,9 +17,14 @@ nav{
     margin-bottom: 1em;
 }
 
-nav > a{
+a{
     text-decoration: none;
-    color: black;
+    color: white;
+    font-size: 2em;
+}
+
+nav > a{
+    font-size: 1.5em;
 }
 
 .runeInfo{
@@ -31,6 +36,17 @@ nav > a{
     display: flex;
     flex-direction: column;
     margin-left: 5%;
+}
+
+.btnContainer{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.btnContainer > button{
+    margin-top: 0;
+    margin-right: 2%;
 }
 
 .runeImage{

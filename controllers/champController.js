@@ -1,6 +1,6 @@
 const Champion = require('../models/champ');
 const helper = require('../api/helper');
-
+//Controller for champs
 const champController = {
     show: (req, res) => {
         Champion.find().then(champs => {

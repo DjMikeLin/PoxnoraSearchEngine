@@ -1,6 +1,6 @@
 const Relic = require('../models/relic');
 const helper = require('../api/helper');
-
+//Controller for relics
 const relicController = {
     show: (req, res) => {
         Relic.find().then(relics => {

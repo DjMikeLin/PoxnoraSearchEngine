@@ -1,6 +1,6 @@
 const Equip = require('../models/equip');
 const helper = require('../api/helper');
-
+//Controller for equips
 const equipController = {
     show: (req, res) => {
         Equip.find().then(equips => {

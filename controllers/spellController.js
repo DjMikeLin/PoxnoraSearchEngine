@@ -1,6 +1,6 @@
 const Spell = require('../models/spell');
 const helper = require('../api/helper');
-
+//Controller for spells
 const spellController = {
     show: (req, res) => {
         Spell.find().then(spells => {

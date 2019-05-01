@@ -1,6 +1,7 @@
 $(() => {
-    $('select').on('change', function(){
-        $('#pageLink').attr("href", $('#pageLink').attr("href") + this.value);
+    $('#selectRune').on('change', function(){
+        window.location.href = $('#pageLink').attr("href") + this.value;
+        //$('#pageLink').attr("href", $('#pageLink').attr("href") + this.value);
     });
 
     $('#editBtn').on('click', function(e){

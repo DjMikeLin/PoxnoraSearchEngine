@@ -1,16 +1,29 @@
 <main>
-    <select class="form-control" name="">
-        <option selected>Select One</option>
+    <select id="selectRune" class="form-control">
+        <option selected>Select Champion</option>
         {{#each champs}}
             <option value="{{id}}">{{name}}</option>
         {{/each}}
     </select>
 
-    <a id="pageLink" href="/champions/">
-        <button class="btn btn-lg btn-dark btn-outline-success">
-            Find
-        </button>
-    </a>
+    <form action="">
+        <select id="selectFaction" class="form-control" name="faction">
+            <option value="fs">Forglar Swamp</option>
+            <option value="fw">Forsaken Wastes</option>
+            <option value="is">Ironfist Stronghold</option>
+            <option value="kf">K'thir Forest</option>
+            <option value="st">Savage Tundra</option>
+            <option value="sp">Shattered Peaks</option>
+            <option value="sl" selected>Sundered Lands</option>
+            <option value="ud">Underdepths</option>
+        </select>
+
+        <a id="pageLink" href="/champions/">
+            <button class="btn btn-lg btn-dark btn-outline-success">
+                Find
+            </button>
+        </a>
+    </form>
 
     <a href="/champions/create">
         <button class="btn btn-lg btn-dark btn-outline-success">

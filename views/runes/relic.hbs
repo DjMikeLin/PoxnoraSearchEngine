@@ -6,7 +6,25 @@
         {{/each}}
     </select>
 
-    <a id="pageLink" href="/relics/">
+    <form action="/relics" method="POST">
+        <select class="form-control" name="faction">
+            <option value="" selected>All Factions</option>
+            <option value="Forglar Swamp">Forglar Swamp</option>
+            <option value="Forsaken Wastes">Forsaken Wastes</option>
+            <option value="Ironfist Stronghold">Ironfist Stronghold</option>
+            <option value="K'thir Forest">K'thir Forest</option>
+            <option value="Savage Tundra">Savage Tundra</option>
+            <option value="Shattered Peaks">Shattered Peaks</option>
+            <option value="Sundered Lands">Sundered Lands</option>
+            <option value="Underdepths">Underdepths</option>
+        </select>
+
+        <button class="btn btn-lg btn-dark btn-outline-success">
+            Find
+        </button>
+    </form>
+
+{{!--     <a id="pageLink" href="/relics/">
         <button class="btn btn-lg btn-dark btn-outline-success">
             Find
         </button>
@@ -16,7 +34,7 @@
         <button class="btn btn-lg btn-dark btn-outline-success">
             Create Relic
         </button>
-    </a>
+    </a> --}}
 
     {{#each relics}}
         <div class="runeInfo">

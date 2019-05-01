@@ -6,30 +6,29 @@
         {{/each}}
     </select>
 
-    <form action="">
-        <select id="selectFaction" class="form-control" name="faction">
-            <option value="fs">Forglar Swamp</option>
-            <option value="fw">Forsaken Wastes</option>
-            <option value="is">Ironfist Stronghold</option>
-            <option value="kf">K'thir Forest</option>
-            <option value="st">Savage Tundra</option>
-            <option value="sp">Shattered Peaks</option>
-            <option value="sl" selected>Sundered Lands</option>
-            <option value="ud">Underdepths</option>
+    <form action="/champions" method="POST">
+        <select class="form-control" name="faction">
+            <option value="" selected>All Factions</option>
+            <option value="Forglar Swamp">Forglar Swamp</option>
+            <option value="Forsaken Wastes">Forsaken Wastes</option>
+            <option value="Ironfist Stronghold">Ironfist Stronghold</option>
+            <option value="K'thir Forest">K'thir Forest</option>
+            <option value="Savage Tundra">Savage Tundra</option>
+            <option value="Shattered Peaks">Shattered Peaks</option>
+            <option value="Sundered Lands">Sundered Lands</option>
+            <option value="Underdepths">Underdepths</option>
         </select>
 
-        <a id="pageLink" href="/champions/">
-            <button class="btn btn-lg btn-dark btn-outline-success">
-                Find
-            </button>
-        </a>
+        <button class="btn btn-lg btn-dark btn-outline-success">
+            Find
+        </button>
     </form>
 
-    <a href="/champions/create">
+{{!--     <a href="/champions/create">
         <button class="btn btn-lg btn-dark btn-outline-success">
             Create Champion
         </button>
-    </a>
+    </a> --}}
 
     {{#each champs}}
         <div class="runeInfo">

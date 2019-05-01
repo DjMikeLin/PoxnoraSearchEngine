@@ -69,6 +69,11 @@ const spellController = {
             else
                 res.redirect('/spells/error');
         });
+    },
+    filter: (req, res) => {
+        Spell.find({factions: req.body.faction}).then(spells => {
+            res.render("runes/spell", { spells });
+        });
     }
 };
 

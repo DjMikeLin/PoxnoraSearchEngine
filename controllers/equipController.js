@@ -64,6 +64,11 @@ const equipController = {
             else
                 res.redirect('/equipments/error');
         });
+    },
+    filter: (req, res) => {
+        Equip.find({factions: req.body.faction}).then(equips => {
+            res.render("runes/equip", { equips });
+        });
     }
 }
 

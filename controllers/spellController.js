@@ -71,8 +71,12 @@ const spellController = {
         });
     },
     filter: (req, res) => {
-        Spell.find({factions: req.body.faction}).then(spells => {
+        let query = req.body.faction === '' ? {} : {factions: req.body.faction};
+
+        Spell.find(query).then(spells => {
             res.render("runes/spell", { spells });
+        }).catch(error => {
+            console.log(error);
         });
     }
 };

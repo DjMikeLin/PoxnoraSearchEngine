@@ -97,18 +97,13 @@ const champController = {
         });
     },
     filter: (req, res) => {
-        if(req.body.faction === ''){
-            Champion.find().then(champs => {
-                res.render("runes/champ", { champs });
-            }).catch(error => {
-                console.log(error);
-            })
-        }
-        else{
-            Champion.find({factions: req.body.faction}).then(champs => {
-                res.render("runes/champ", { champs });
-            });
-        }
+        let query = req.body.faction === '' ? {} : {factions: req.body.faction};
+
+        Champion.find(query).then(champs => {
+            res.render("runes/champ", { champs });
+        }).catch(error => {
+            console.log(error);
+        });
     }
 };
 

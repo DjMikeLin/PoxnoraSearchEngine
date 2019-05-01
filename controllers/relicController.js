@@ -68,8 +68,12 @@ const relicController = {
         });
     },
     filter: (req, res) => {
-        Relic.find({factions: req.body.faction}).then(relics => {
+        let query = req.body.faction === '' ? {} : {factions: req.body.faction};
+
+        Relic.find(query).then(relics => {
             res.render("runes/relic", { relics });
+        }).catch(error => {
+            console.log(error);
         });
     }
 }

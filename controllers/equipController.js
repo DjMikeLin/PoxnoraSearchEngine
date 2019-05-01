@@ -66,8 +66,12 @@ const equipController = {
         });
     },
     filter: (req, res) => {
-        Equip.find({factions: req.body.faction}).then(equips => {
+        let query = req.body.faction === '' ? {} : {factions: req.body.faction};
+
+        Equip.find(query).then(equips => {
             res.render("runes/equip", { equips });
+        }).catch(error => {
+            console.log(error);
         });
     }
 }

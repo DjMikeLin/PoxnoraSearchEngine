@@ -1,10 +1,21 @@
 const Champion = require('../models/champ');
+const Ability = require('../models/ability');
 const helper = require('../api/helper');
 //Controller for champs
 const champController = {
     show: (req, res) => {
         Champion.find().then(champs => {
-            res.render("runes/champ", { champs });
+            Ability.find().then(abilities => {
+                abilities.sort((a, b) => {
+                    if(a.name.toLowerCase() < b.name.toLowerCase())
+                        return -1;
+                    else if(a.name.toLowerCase() > b.name.toLowerCase())
+                        return 1;
+                    
+                    return parseInt(a.level) < parseInt(b.level) ? -1 : 1;
+                });
+                res.render("runes/champ", { champs, abilities });
+            })
         }).catch(error => {
             console.log(error);
         })

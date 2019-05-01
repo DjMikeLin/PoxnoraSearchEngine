@@ -24,6 +24,7 @@ Champ.find().then(champs => {
             })
         })
     });
-    
+
     Ability.create(uniqueAbilities);
+    console.log("Finished Creating and Seeding!");
 });

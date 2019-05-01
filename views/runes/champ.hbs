@@ -19,6 +19,13 @@
             <option value="Underdepths">Underdepths</option>
         </select>
 
+        <select class="form-control" name="ability">
+            <option value="" selected>All Abilities</option>
+            {{#each abilities}}
+                <option value="{{name}}">{{name}} {{level}}</option>
+            {{/each}}
+        </select>
+
         <button class="btn btn-lg btn-dark btn-outline-success">
             Find
         </button>

@@ -25,7 +25,7 @@
             <p>Size: {{size}}</p>
         {{/if}}
         <p>Rarity: {{rarity}}</p>
-        {{#if classes}}
+{{!--         {{#if classes}}
             <p>
                 Classes: 
                 {{#each classes}}
@@ -40,7 +40,7 @@
                     {{this}}
                 {{/each}}
             </p>
-        {{/if}}
+        {{/if}} --}}
         <p>Nora Cost: {{noraCost}}</p>
         {{#if cooldown}}
             <p>Cooldown: {{cooldown}}</p>
@@ -54,7 +54,7 @@
         </p>
         <p>Expansion Released: {{runeSet}}</p>
         <p>Deck Limit: {{deckLimit}}</p>
-        {{#if startingAbilities}}
+        {{!-- {{#if startingAbilities}}
             <p>
                 Starting Abilities:
                 {{#each startingAbilities}}
@@ -68,7 +68,6 @@
                 {{#each abilitySets}}
                     {{#each this}}
                         {{#each this}}
-                            {{!-- Upgrade {{@index}}: --}}
                             {{#each this}}
                                 {{this.name}} {{this.level}} Nora Cost: {{this.noraCost}}
                             {{/each}}  |
@@ -76,7 +75,7 @@
                     {{/each}}
                 {{/each}}
             </p>
-        {{/if}}
+        {{/if}} --}}
     </div>
 </div>
 

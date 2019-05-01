@@ -31,7 +31,7 @@
                 <p>Hit Points: {{hitPoints}}</p>
                 <p>Size: {{size}}</p>
                 <p>Rarity: {{rarity}}</p>
-                <p>
+{{!--                 <p>
                     Classes: 
                     {{#each classes}}
                         {{this}} 
@@ -42,7 +42,7 @@
                     {{#each races}}
                         {{this}}
                     {{/each}}
-                </p>
+                </p> --}}
                 <p>Nora Cost: {{noraCost}}</p>
                 <p>Artist: {{artist}}</p>
                 <p>
@@ -53,7 +53,7 @@
                 </p>
                 <p>Expansion Released: {{runeSet}}</p>
                 <p>Deck Limit: {{deckLimit}}</p>
-                <p>
+                {{!-- <p>
                     Starting Abilities:
                     {{#each startingAbilities}}
                         {{this.name}} |
@@ -64,14 +64,13 @@
                     {{#each abilitySets}}
                         {{#each this}}
                             {{#each this}}
-                                {{!-- Upgrade {{@index}}: --}}
                                 {{#each this}}
                                     {{this.name}} {{this.level}} Nora Cost: {{this.noraCost}}
                                 {{/each}}  |
                             {{/each}}
                         {{/each}}
                     {{/each}}
-                </p>
+                </p> --}}
             </div>
         </div>
     {{/each}}

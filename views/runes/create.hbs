@@ -68,23 +68,23 @@
         <input name="rarity" type="text" value="{{rarity}}">
     </Section>
 
-    {{#if classes}}
+{{!--     {{#if classes}}
         <section>
             Classes:
             {{#each classes}}
                 <input type="text" value="{{this}}">
             {{/each}}
         </section>
-    {{/if}}
+    {{/if}} --}}
 
-    {{#if races}}
+{{!--     {{#if races}}
         <section>
             Races: 
             {{#each races}}
                 <input type="text" value="{{this}}">
             {{/each}}
         </section>
-    {{/if}}
+    {{/if}} --}}
 
     <section>
         Nora Cost: 
@@ -141,22 +141,21 @@
         <input name="hash" type="text" value="{{hash}}">
     </section>
 
-    {{#if startingAbilities}}
+{{!--     {{#if startingAbilities}}
         <section>
             Starting Abilities: 
             {{#each startingAbilities}}
                 <input type="text" value="{{this.name}}">
             {{/each}}
         </section>
-    {{/if}}
+    {{/if}} --}}
 
-    {{#if abilitySets}}
+{{!--     {{#if abilitySets}}
         <section>
             Upgrades:
             {{#each abilitySets}}
                 {{#each this}}
                     {{#each this}}
-                        {{!-- Upgrade {{@index}}: --}}
                         {{#each this}}
                             <input type="text" value="{{this.name}}">
                         {{/each}}  |
@@ -164,7 +163,7 @@
                 {{/each}}
             {{/each}}
         </section>
-    {{/if}}
+    {{/if}} --}}
 
     <input class="btn btn-lg btn-dark btn-outline-success" id="createBtn" type="button" value="Create">
 </form>

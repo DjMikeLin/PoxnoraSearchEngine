@@ -12,7 +12,7 @@ Champ.find().then(champs => {
                 abilitySet.add(ability.id);
             }
         });
-
+        
         champ.abilitySets.forEach(e => {
             e.forEach(ele => {
                 ele.abilities.forEach(ability => {

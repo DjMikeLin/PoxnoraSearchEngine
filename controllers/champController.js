@@ -108,9 +108,16 @@ const champController = {
         });
     },
     filter: (req, res) => {
-        let query = req.body.faction === '' ? {} : {factions: req.body.faction};
-
-        Champion.find(query).then(champs => {
+        let query1 = req.body.faction === '' ? {} : {factions: req.body.faction};
+        let query2 = req.body.ability === '' ? {} : {startingAbilities: { $elemMatch: {name: req.body.ability }}};
+        let query3 = req.body.ability === '' ? {} : {abilitySets: { $elemMatch: { abilities: {$elemMatch: {name: req.body.ability}}}}};
+        
+        Champion.find({
+            $and: [
+                query1,
+                { $or: [query2, query3]}
+            ]
+        }).then(champs => {
             res.render("runes/champ", { champs });
         }).catch(error => {
             console.log(error);

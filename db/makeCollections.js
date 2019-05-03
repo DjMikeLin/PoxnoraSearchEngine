@@ -44,8 +44,11 @@ Champ.find().then(champs => {
             }
         });
     });
-    Ability.create(uniqueAbilities);
-    Race.create(uniqueRaces);
-    Class.create(uniqueClasses);
-    console.log("Finished Creating and Seeding!");
+    Ability.create(uniqueAbilities).then(() => {
+        Race.create(uniqueRaces).then(() => {
+            Class.create(uniqueClasses).then(() =>{
+                console.log("Finished Creating and Seeding!");
+            });
+        });
+    });
 });

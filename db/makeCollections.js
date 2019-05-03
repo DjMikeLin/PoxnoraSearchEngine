@@ -9,7 +9,7 @@ let raceSet = new Set();
 let uniqueAbilities = [];
 let uniqueClasses = [];
 let uniqueRaces = [];
-//Seeds abilities collection with unique abilities
+//Seeds abilities, classes, and races collection with unique elements
 Champ.find().then(champs => {
     champs.forEach(champ => {
         champ.startingAbilities.forEach(ability => {

@@ -26,6 +26,20 @@
             {{/each}}
         </select>
 
+        <select class="form-control" name="class">
+            <option value="" selected>All Classes</option>
+            {{#each classes}}
+                <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+
+        <select class="form-control" name="race">
+            <option value="" selected>All Races</option>
+            {{#each races}}
+                <option value="{{name}}">{{name}}</option>
+            {{/each}}
+        </select>
+
         <select class="form-control" name="sort">
             <option value="" selected>Sort By:</option>
             <option value="descend">Sort By Nora Descending</option>

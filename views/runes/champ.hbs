@@ -26,6 +26,13 @@
             {{/each}}
         </select>
 
+        <select class="form-control" name="sort">
+            <option value="" selected>Sort By:</option>
+            <option value="descend">Sort By Nora Descending</option>
+            <option value="ascend">Sort By Nora Ascending</option>
+            <option value="name">Sort By Name</option>
+        </select>
+
         <button class="btn btn-lg btn-dark btn-outline-success">
             Find
         </button>
@@ -50,7 +57,7 @@
                 <p>Hit Points: {{hitPoints}}</p>
                 <p>Size: {{size}}</p>
                 <p>Rarity: {{rarity}}</p>
-{{!--                 <p>
+                <p>
                     Classes: 
                     {{#each classes}}
                         {{this}} 
@@ -61,7 +68,7 @@
                     {{#each races}}
                         {{this}}
                     {{/each}}
-                </p> --}}
+                </p>
                 <p>Nora Cost: {{noraCost}}</p>
                 <p>Artist: {{artist}}</p>
                 <p>
@@ -72,7 +79,7 @@
                 </p>
                 <p>Expansion Released: {{runeSet}}</p>
                 <p>Deck Limit: {{deckLimit}}</p>
-                {{!-- <p>
+                <p>
                     Starting Abilities:
                     {{#each startingAbilities}}
                         {{this.name}} |
@@ -89,7 +96,7 @@
                             {{/each}}
                         {{/each}}
                     {{/each}}
-                </p> --}}
+                </p>
             </div>
         </div>
     {{/each}}

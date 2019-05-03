@@ -1,6 +1,9 @@
 $(() => {
-    $('select').on('change', function(){
-        $('#pageLink').attr("href", $('#pageLink').attr("href") + this.value);
+    $('#selectRune').on('change', function(){
+        if(window.location.href.charAt(window.location.href.length - 1) !== '/')
+            window.location.href = window.location.href + '/' + this.value;
+        else
+            window.location.href = window.location.href + this.value;
     });
 
     $('#editBtn').on('click', function(e){

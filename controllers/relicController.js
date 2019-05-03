@@ -66,6 +66,15 @@ const relicController = {
             else
                 res.redirect('/relics/error');
         });
+    },
+    filter: (req, res) => {
+        let query = req.body.faction === '' ? {} : {factions: req.body.faction};
+
+        Relic.find(query).then(relics => {
+            res.render("runes/relic", { relics });
+        }).catch(error => {
+            console.log(error);
+        });
     }
 }
 

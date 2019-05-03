@@ -69,6 +69,15 @@ const spellController = {
             else
                 res.redirect('/spells/error');
         });
+    },
+    filter: (req, res) => {
+        let query = req.body.faction === '' ? {} : {factions: req.body.faction};
+
+        Spell.find(query).then(spells => {
+            res.render("runes/spell", { spells });
+        }).catch(error => {
+            console.log(error);
+        });
     }
 };
 

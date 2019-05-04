@@ -52,15 +52,9 @@
         </button>
     </form>
 
-{{!--     <a href="/champions/create">
-        <button class="btn btn-lg btn-dark btn-outline-success">
-            Create Champion
-        </button>
-    </a> --}}
-
     {{#each champs}}
         <div class="runeInfo">
-            <img class="runeImage" src="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
+            <img class="runeImage" data-lazy="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
             <div class="container">
                 <p>Name: {{name}}</p>
                 <p>Description: {{description}}</p>

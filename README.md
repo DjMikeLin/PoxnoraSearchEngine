@@ -1,5 +1,5 @@
 # Poxnora Search Engine
-Search engine to search/filter runes in Poxnora built as a MEHN(MongoDB, Express, Handlebars, Node) application.
+Fullstack MEHN search engine application to search/filter runes in Poxnora built as a MEHN(MongoDB, Express, Handlebars, Node) application. App also has a branch called *mehn-crud* that is a full CRUD app.
 
 ## Technologies and Frameworks Used
 #### **Bootstrap**
@@ -35,8 +35,11 @@ mongoimport --db poxnora-database --collection spells --file spells.json --jsonA
 mongoimport --db poxnora-database --collection relics --file relics.json --jsonArray
 mongoimport --db poxnora-database --collection equips --file equips.json --jsonArray
 ```
-4. Run `node server.js`
+4. Run `node server.js` or `npm start`
 5. Navigate to <http://localhost:3000/> to test the code.
+
+### To run the test the Full CRUB app on branch *mehn-crud*
+Run `git checout mehn-crud` to switch to that branch and follow steps 4 and 5 from above
 
 ## Whiteboarding
 ### Entity Relationship Diagram
@@ -48,12 +51,17 @@ mongoimport --db poxnora-database --collection equips --file equips.json --jsonA
 ![No Image Found](images/error.jpg)
 
 ## Website/App Link
+### MEHN Full CRUD App
 <https://secure-dusk-71733.herokuapp.com/>
+### MEHN Search Engine
+<https://aqueous-dusk-28109.herokuapp.com/>
 
 ## Project Board
 ### Github Projects
 <https://github.com/DjMikeLin/PoxnoraSearchEngine/projects/1>
 
 ## References
+### **All data and assets used in this application belong to the game [Poxnora](https://www.poxnora.com) and the creators [Desert Owl Games](http://www.desertowlgames.com/)**
+
 ### JSON used to create MongoDB
 <https://www.poxnora.com/api/feed.do?t=json>

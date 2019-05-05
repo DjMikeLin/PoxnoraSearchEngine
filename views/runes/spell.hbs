@@ -19,25 +19,21 @@
             <option value="Underdepths">Underdepths</option>
         </select>
 
+        <select class="form-control" name="sort">
+            <option value="" selected>Sort By:</option>
+            <option value="descend">Sort By Nora Descending</option>
+            <option value="ascend">Sort By Nora Ascending</option>
+            <option value="name">Sort By Name</option>
+        </select>
+
         <button class="btn btn-lg btn-dark btn-outline-success">
             Find
         </button>
     </form>
-{{!--     <a id="pageLink" href="/spells/">
-        <button class="btn btn-lg btn-dark btn-outline-success">
-            Find
-        </button>
-    </a>
-
-    <a href="/spells/create">
-        <button class="btn btn-lg btn-dark btn-outline-success">
-            Create Spell
-        </button>
-    </a> --}}
 
     {{#each spells}}
         <div class="runeInfo">
-            <img class="runeImage" src="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
+            <img class="runeImage" data-lazy="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
             <div class="container">
                 <p>Name: {{name}}</p>
                 <p>Description: {{description}}</p>

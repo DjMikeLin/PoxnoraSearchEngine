@@ -27,6 +27,11 @@ nav > a{
     font-size: 1.5em;
 }
 
+#runeImage{
+    width: 20%;
+    height: 75%;
+}
+
 .runeInfo{
     display: flex;
     margin: 5% 0;

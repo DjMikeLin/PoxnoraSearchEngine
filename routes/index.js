@@ -4,6 +4,7 @@ let champController = require('../controllers/champController');
 let relicController = require('../controllers/relicController');
 let equipController = require('../controllers/equipController');
 let searchController = require('../controllers/searchController');
+let abilityController = require('../controllers/abilityController');
 let router = express.Router();
 //Route for homepage
 router.get('/', searchController.show);
@@ -23,5 +24,7 @@ router.get('/relics/:id', relicController.getRune);
 router.get('/equipments', equipController.show);
 router.post('/equipments', equipController.filter);
 router.get('/equipments/:id', equipController.getRune);
+//Routes for abilities
+router.get('/abilities', abilityController.show);
 
 module.exports = router;

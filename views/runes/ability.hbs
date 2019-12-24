@@ -18,7 +18,9 @@
                 <p>Name: {{name}}</p>
                 <p>Description: {{shortDescription}}</p>
                 <p>AP Cost: {{apCost}}</p>
-                <p>Level: {{level}}</p>
+                {{#if level includeZero=false}}
+                    <p>Level: {{level}}</p>
+                {{/if}}
                 <p>Cooldown: {{cooldown}}</p>
                 <p>Nora Cost: {{noraCost}}</p>
             </div>

@@ -3,7 +3,7 @@ const mongoose = require('../db/connection.js');
 let Ability = mongoose.Schema({
     default: Boolean,
     id: Number,
-    apCost: 0,
+    apCost: Number,
     name: String,
     shortDescription: String,
     activationType: Number,

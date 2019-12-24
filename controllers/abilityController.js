@@ -4,17 +4,16 @@ const helper = require('../api/helper');
 const AbilityController = {
     show: (req, res) => {
         Ability.find().then(abilities => {
-            res.send(abilities);
-            //res.render("runes/ability", { abilities });
+            res.render("runes/ability", { abilities });
         }).catch(error => {
             console.log(error);
         })
-    }/*,
-    getRune: (req, res) => {
-        Relic.find({_id: req.params.id}).then(relic => {
-            res.render("runes/rune", relic[0]);
-        })
     },
+    getRune: (req, res) => {
+        Ability.find({id: req.params.id}).then(ability => {
+            res.render("runes/rune", ability[0]);
+        })
+    }/*,
     filter: (req, res) => {
         let query = req.body.faction === '' ? {} : {factions: req.body.faction};
 

@@ -26,5 +26,6 @@ router.post('/equipments', equipController.filter);
 router.get('/equipments/:id', equipController.getRune);
 //Routes for abilities
 router.get('/abilities', abilityController.show);
+router.get('/abilities/:id', abilityController.getRune);
 
 module.exports = router;

@@ -1,12 +1,12 @@
 <main>
     <select id="selectRune" class="form-control" name="">
-        <option selected>Select Relic</option>
-        {{#each relics}}
+        <option selected>Select Ability</option>
+        {{#each abilities}}
             <option value="{{id}}">{{name}}</option>
         {{/each}}
     </select>
 
-    <form action="/relics" method="POST">
+    <form action="/abilities" method="POST">
         <select class="form-control" name="faction">
             <option value="" selected>All Factions</option>
             <option value="Forglar Swamp">Forglar Swamp</option>
@@ -31,26 +31,16 @@
         </button>
     </form>
 
-    {{#each relics}}
+    {{#each abilities}}
         <div class="runeInfo">
-            <img class="runeImage" data-lazy="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
+            <img class="runeImage" data-lazy="https://d2aao99y1mip6n.cloudfront.net/images/ability_icons/small/icon_{{iconName}}.gif" alt="Image not found">
             <div class="container">
                 <p>Name: {{name}}</p>
-                <p>Description: {{description}}</p>
-                <p>Flavor Text: {{flavorText}}</p>
+                <p>Description: {{shortDescription}}</p>
+                <p>AP Cost: {{apCost}}</p>
+                <p>Level: {{level}}</p>
+                <p>Cooldown: {{cooldown}}</p>
                 <p>Nora Cost: {{noraCost}}</p>
-                <p>Artist: {{artist}}</p>
-                <p>Factions: 
-                    {{#each factions}}
-                        {{this}} 
-                    {{/each}}
-                </p>
-                <p>Rarity: {{rarity}}</p>
-                <p>Expansion Released: {{runeSet}}</p>
-                <p>Defense: {{defense}}</p>
-                <p>Hitpoints: {{hitPoints}}</p>
-                <p>Size: {{size}}</p>
-                <p>Deck Limit: {{deckLimit}}</p>
             </div>
         </div>
     {{/each}}

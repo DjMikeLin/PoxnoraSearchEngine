@@ -2,7 +2,12 @@
     <select id="selectRune" class="form-control" name="">
         <option selected>Select Ability</option>
         {{#each abilities}}
-            <option value="{{id}}">{{name}}</option>
+            <option value="{{id}}">
+                {{name}}
+                {{#if level includeZero=false}}
+                    {{level}}
+                {{/if}} 
+            </option>
         {{/each}}
     </select>
 

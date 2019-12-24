@@ -4,6 +4,7 @@ const helper = require('../api/helper');
 const AbilityController = {
     show: (req, res) => {
         Ability.find().then(abilities => {
+            helper.sortByNameAndLevel(abilities) 
             res.render("runes/ability", { abilities });
         }).catch(error => {
             console.log(error);

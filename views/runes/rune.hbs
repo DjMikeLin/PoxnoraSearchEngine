@@ -1,8 +1,24 @@
 <div class="runeInfo">
-    <img id="runeImage" src="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
+    {{#if hash}}
+        <img id="runeImage" src="https://d2aao99y1mip6n.cloudfront.net/images/runes/lg/{{hash}}.jpg" alt="Image not found">
+    {{/if}}
+    {{#if iconName}}
+        <img class="runeImage icon" data-lazy="https://d2aao99y1mip6n.cloudfront.net/images/ability_icons/small/icon_{{iconName}}.gif" alt="Image not found">
+    {{/if}}
     <div class="container">
         <p>Name: {{name}}</p>
-        <p>Description: {{description}}</p>
+        {{#if description}}
+            <p>Description: {{description}}</p>
+        {{/if}}
+        {{#if shortDescription}}
+            <p>Description: {{shortDescription}}</p>
+        {{/if}}
+        {{#if apCost}}
+            <p>AP Cost: {{apCost}}</p>    
+        {{/if}}
+        {{#if level}}
+            <p>Level: {{level}}</p>
+        {{/if}}
         {{#if flavorText}}
             <p>Flavor Text: {{flavorText}}</p>
         {{/if}}
@@ -24,7 +40,9 @@
         {{#if size}}
             <p>Size: {{size}}</p>
         {{/if}}
-        <p>Rarity: {{rarity}}</p>
+        {{#if rarity}}
+            <p>Rarity: {{rarity}}</p>
+        {{/if}}
         {{#if classes}}
             <p>
                 Classes: 
@@ -45,15 +63,23 @@
         {{#if cooldown}}
             <p>Cooldown: {{cooldown}}</p>
         {{/if}}
-        <p>Artist: {{artist}}</p>
-        <p>
-            Factions:
-            {{#each factions}}
-                {{this}}
-            {{/each}}
-        </p>
-        <p>Expansion Released: {{runeSet}}</p>
-        <p>Deck Limit: {{deckLimit}}</p>
+        {{#if artist}}
+            <p>Artist: {{artist}}</p>
+        {{/if}}
+        {{#if factions}}
+            <p>
+                Factions:
+                {{#each factions}}
+                    {{this}}
+                {{/each}}
+            </p>
+        {{/if}}
+        {{#if runeSet}}
+            <p>Expansion Released: {{runeSet}}</p>
+        {{/if}}
+        {{#if deckLimit}}
+            <p>Deck Limit: {{deckLimit}}</p>
+        {{/if}}
         {{#if startingAbilities}}
             <p>
                 Starting Abilities:

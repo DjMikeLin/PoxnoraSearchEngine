@@ -22,7 +22,12 @@
         <select class="form-control" name="ability">
             <option value="" selected>All Abilities</option>
             {{#each abilities}}
-                <option value="{{name}}">{{name}} {{level}}</option>
+                <option value="{{name}}">
+                    {{name}}
+                    {{#if level includeZero = false}} 
+                        {{level}}
+                    {{/if}}
+                </option>
             {{/each}}
         </select>
 

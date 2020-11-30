@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const routes = require('./routes/index');
 const methodOverride = require('method-override');
 const logger = require('morgan');
+const scheduler = require('./db/jobScheduler');
 
 //Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -15,11 +16,6 @@ app.use(logger('dev'));
 app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'hbs');
-/* hbs.registerHelper("inc", function(value, options)
-{
-    return parseInt(value) + 1;
-});
-app.engine('handlebars', hbs); */
 
 app.use('/', routes);
 
@@ -28,3 +24,5 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`App is listening on PORT ${PORT}`)
 });
+
+scheduler.job.start();

@@ -12,5 +12,3 @@ module.exports = {
         'America/New_York'
     )
 };
-
-//job.start();

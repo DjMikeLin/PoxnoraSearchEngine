@@ -4,7 +4,6 @@ const hbs = require('hbs');
 const routes = require('./routes/index');
 const methodOverride = require('method-override');
 const logger = require('morgan');
-const scheduler = require('./db/jobScheduler');
 
 //Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -24,5 +23,3 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`App is listening on PORT ${PORT}`)
 });
-
-scheduler.job.start();

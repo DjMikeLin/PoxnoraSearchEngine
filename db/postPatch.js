@@ -116,7 +116,7 @@ module.exports = {
                     console.log('error creating relics', err)
             })
 
-            await exec('mongoimport --uri mongodb+srv://' + userName + ':' + password + URI + ' --drop --collection champions1 --file JSON/champs.json --jsonArray',
+            await exec('mongoimport --uri mongodb+srv://' + userName + ':' + password + URI + ' --drop --collection champions --file JSON/champs.json --jsonArray',
             (error, stdout, stderr) => {
                 console.log('stdout: ' + stdout)
                 console.log('stderr: ' + stderr)
@@ -125,7 +125,7 @@ module.exports = {
                 }
             })
             
-            await exec('mongoimport --uri mongodb+srv://' + userName + ':' + password + URI + ' --drop --collection spells1 --file JSON/spells.json --jsonArray',
+            await exec('mongoimport --uri mongodb+srv://' + userName + ':' + password + URI + ' --drop --collection spells --file JSON/spells.json --jsonArray',
             (error, stdout, stderr) => {
                 console.log('stdout: ' + stdout)
                 console.log('stderr: ' + stderr)
@@ -134,7 +134,7 @@ module.exports = {
                 }
             })
             
-            await exec('mongoimport --uri mongodb+srv://' + userName + ':' + password + URI + ' --drop --collection relics1 --file JSON/relics.json --jsonArray',
+            await exec('mongoimport --uri mongodb+srv://' + userName + ':' + password + URI + ' --drop --collection relics --file JSON/relics.json --jsonArray',
             (error, stdout, stderr) => {
                 console.log('stdout: ' + stdout)
                 console.log('stderr: ' + stderr)
@@ -143,7 +143,7 @@ module.exports = {
                 }
             })
             
-            await exec('mongoimport --uri mongodb+srv://' + userName + ':' + password + URI + ' --drop --collection equips1 --file JSON/equips.json --jsonArray',
+            await exec('mongoimport --uri mongodb+srv://' + userName + ':' + password + URI + ' --drop --collection equips --file JSON/equips.json --jsonArray',
             (error, stdout, stderr) => {
                 console.log('stdout: ' + stdout)
                 console.log('stderr: ' + stderr)
